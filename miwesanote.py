@@ -1,7 +1,7 @@
 import socket
 import time
 from utils import translate
-from beauty import get, get_card
+from beauty import get, get_card, reversals
 
 
 class Bot(object):
@@ -67,29 +67,33 @@ class Bot(object):
                 elif 'spread' in message:
                     if '5' in message or 'five' in message:
                         if 'haindl+v' in message:
-                            output = get('haindl+v', '5spread')
+                            output = 'This spread will actually take up a lot of space in chat. Could you PM me?'
                         elif 'haindl++' in message:
-                            output = get_card('haindl++', '5spread')
+                            output = reversals('haindl++', '5spread')
                         elif 'haindl+' in message:
-                            output = get_card('haindl+', '5spread')
+                            output = reversals('haindl+', '5spread')
                         else:
-                            output = get_card('haindl', '5spread')
+                            output = reversals('haindl', '5spread')
                     elif '10' in message or 'ten' in message:
-                        output = get_card('haindl', '10spread')
+                        output = 'This spread will actually take up a lot of space in chat. Could you PM me?'
                     elif 'love' in message or 'boyfriend' in message or 'girlfriend' in message or 'bf' in message or 'gf' in message:
-                        output = get_card('haindl', 'lovespread')
+                        if 'haindl+v' in message:
+                            output = 'This spread will actually take up a lot of space in chat. Could you PM me?'
+                        elif 'haindl++' in message:
+                            output = reversals('haindl++', 'lovespread')
+                        elif 'haindl+' in message:
+                            output = reversals('haindl+', 'lovespread')
+                        else:
+                            output = reversals('haindl', 'lovespread')
                     elif 'hagall' in message:
-                        output = get_card('haindl', 'hagall')
+                        output = 'This spread will actually take up a lot of space in chat. Could you PM me?'
                     elif 'spirit' in message:
-                        output = get_card('haindl', 'spiritual')
+                        output = 'This spread will actually take up a lot of space in chat. Could you PM me?'
                     elif 'direction' in message:
-                        output = get_card('haindl', 'wind')
+                        output = 'This spread will actually take up a lot of space in chat. Could you PM me?'
                     else:
-                        output = get_card('haindl', '3spread')
-
-                    
-                    
-
+                        output = reversals('haindl', '3spread')
+                        
                 elif 'quote' in message:
                     output = get('quote')
 
@@ -100,12 +104,12 @@ class Bot(object):
                     output = msg['params'][1].rsplit(' ', 1)[0]  + '\r\n'
 
                 else:
-                    output = get_card('haindl', 'single')
+                    output = reversals('haindl', 'single')
                     
                     if sender.lower() == 'soduvvengahaw':
                         output != '79287'
                         
-                    elif 'fuck y' in message or 'fuck off' in message or 'fuck thy' in message or 'fuck thee' in message or 'fuck thine' in message or 'fuck Deltabot' in message:
+                    elif 'fuck y' in message or 'fuck off' in message or 'fuck thy' in message or 'fuck thee' in message or 'fuck thine' in message or 'fuck miwesa' in message:
                         output = 'I-i-i-i\'m really sorry...'
 
                 self.message(channel, '{}: {}'.format(sender, output))
