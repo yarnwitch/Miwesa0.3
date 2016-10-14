@@ -41,6 +41,58 @@ def reversals(deck, type):
             return '[R] ' + sort.choice(HAINDL_ASSOC)
         else:
             return sort.choice(HAINDL_ASSOC)
+        if type == 'single':
+            sort = random.SystemRandom(time.time() * 79287)
+            rng.shuffle(HAINDL_ASSOC)
+            flip = random.SystemRandom(time.time() * 79287)
+            if flip.random() < .4:
+                return sort.choice(HAINDL_ASSOC)[1]
+            else:
+                return sort.choice(HAINDL_ASSOC)[0]
+        if type == '3spread':
+            oriented = [" ", " ", " "]
+            rng.shuffle(HAINDL_ASSOC)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_ASSOC, 3)
+            for i in range(3):
+                if flip.random() < .4:
+                    oriented[i] = cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
+        if type == '5spread':
+            oriented = [" ", " ", " ", " ", " "]
+            rng.shuffle(HAINDL_ASSOC)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_ASSOC, 5)
+            for i in range(5):
+                if flip.random() < .4:
+                    oriented[i] - cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
+        if type == 'tenspread':
+            oriented = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+            rng.shuffle(HAINDL_ASSOC)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_ASSOC, 10)
+            for i in range(10):
+                if flip.random() < .4:
+                    oriented[i] - cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
+        if type == 'lovespread':
+            oriented = ["Physical Connection - ", "Mental Connection - ", "Spiritual/Emotional Connection - ", "Long Term Results - ",]
+            rng.shuffle(HAINDL_ASSOC)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_ASSOC, 4)
+            for i in range(4):
+                if flip.random() < .4:
+                    oriented[i] - cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
     elif deck == 'haindl+':
         flip = random.SystemRandom(time.time() * 72879)
         rng.shuffle(HAINDL_DESC)
@@ -49,6 +101,58 @@ def reversals(deck, type):
             return '[R] ' + sort.choice(HAINDL_DESC)
         else:
             return sort.choice(HAINDL_DESC)
+        if type == 'single':
+            sort = random.SystemRandom(time.time() * 79287)
+            rng.shuffle(HAINDL_DESC)
+            flip = random.SystemRandom(time.time() * 79287)
+            if flip.random() < .4:
+                return sort.choice(HAINDL_DESC)[1]
+            else:
+                return sort.choice(HAINDL_DESC)[0]
+        if type == '3spread':
+            oriented = [" ", " ", " "]
+            rng.shuffle(HAINDL_DESC)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_DESC, 3)
+            for i in range(3):
+                if flip.random() < .4:
+                    oriented[i] = cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
+        if type == '5spread':
+            oriented = [" ", " ", " ", " ", " "]
+            rng.shuffle(HAINDL_DESC)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_DESC, 5)
+            for i in range(5):
+                if flip.random() < .4:
+                    oriented[i] - cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
+        if type == 'tenspread':
+            oriented = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+            rng.shuffle(HAINDL_DESC)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_DESC, 10)
+            for i in range(10):
+                if flip.random() < .4:
+                    oriented[i] - cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
+        if type == 'lovespread':
+            oriented = ["Physical Connection - ", "Mental Connection - ", "Spiritual/Emotional Connection - ", "Long Term Results - ",]
+            rng.shuffle(HAINDL_DESC)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_DESC, 4)
+            for i in range(4):
+                if flip.random() < .4:
+                    oriented[i] - cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
     elif deck == 'haindl':
         flip = random.SystemRandom(time.time() * 72879)
         rng.shuffle(HAINDL_PLAIN)
@@ -57,44 +161,61 @@ def reversals(deck, type):
             return '[R] ' + sort.choice(HAINDL_PLAIN)
         else:
             return sort.choice(HAINDL_PLAIN)
-    elif type == '3spread':
-        sort = random.SystemRandom(time.time() * 72879)
-        if deck == 'haindl':
+        if type == 'single':
+            sort = random.SystemRandom(time.time() * 79287)
+            rng.shuffle(HAINDL_PLAIN)
+            flip = random.SystemRandom(time.time() * 79287)
+            if flip.random() < .4:
+                return sort.choice(HAINDL_PLAIN)[1]
+            else:
+                return sort.choice(HAINDL_PLAIN)[0]
+        if type == '3spread':
             oriented = [" ", " ", " "]
             rng.shuffle(HAINDL_PLAIN)
-            flip = random.SystemRandom(time.time() * 72879)
+            flip = random.SystemRandom(time.time() * 79287)
             cards = sort.sample(HAINDL_PLAIN, 3)
             for i in range(3):
                 if flip.random() < .4:
                     oriented[i] = cards[i][0]
                 else:
                     oriented[i] = cards[i][1]
-                    return oriented  
-        elif deck == 'haindl+':
-            oriented = [" ", " ", " "]
-            rng.shuffle(HAINDL_DESC)
-            flip = random.SystemRandom(time.time() * 72879)
-            cards = sort.sample(HAINDL_DESC, 3)
-            for i in range(3):
+                    return oriented
+        if type == '5spread':
+            oriented = [" ", " ", " ", " ", " "]
+            rng.shuffle(HAINDL_PLAIN)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_PLAIN, 5)
+            for i in range(5):
                 if flip.random() < .4:
-                    oriented[i] = cards[i][0]
+                    oriented[i] - cards[i][0]
                 else:
                     oriented[i] = cards[i][1]
                     return oriented
-        elif deck == 'haindl++':
-            oriented = [" ", " ", " "]
-            rng.shuffle(HAINDL_ASSOC)
-            flip = random.SystemRandom(time.time() * 72879)
-            cards = sort.sample(HAINDL_ASSOC, 3)
-            for i in range(3):
+        if type == 'tenspread':
+            oriented = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+            rng.shuffle(HAINDL_PLAIN)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_PLAIN, 10)
+            for i in range(10):
                 if flip.random() < .4:
-                    oriented[i] = cards[i][0]
+                    oriented[i] - cards[i][0]
                 else:
                     oriented[i] = cards[i][1]
                     return oriented
-        elif deck == 'haindl+v':
-            rng.shuffle(HAINDL_VISUAL)
-            return sort.sample(HAINDL_VISUAL, 3)
+        if type == 'lovespread':
+            oriented = ["Physical Connection - ", "Mental Connection - ", "Spiritual/Emotional Connection - ", "Long Term Results - ",]
+            rng.shuffle(HAINDL_PLAIN)
+            flip = random.SystemRandom(time.time() * 79287)
+            cards = sort.sample(HAINDL_PLAIN, 4)
+            for i in range(4):
+                if flip.random() < .4:
+                    oriented[i] - cards[i][0]
+                else:
+                    oriented[i] = cards[i][1]
+                    return oriented
+    elif deck == 'haindl+v':
+        rng.shuffle(HAINDL_VISUAL)
+        return sort.sample(HAINDL_VISUAL, 3)
 # ----------------------------------------------------------------------------
 
 # Album: http://imgur.com/a/zBwe3
@@ -814,20 +935,20 @@ HAINDL_VISUAL = [
     "1 The Magician - The symbols in the foreground represent the four suits of the Minor Arcana: Wands, Swords, Cups, and Stones. They are also ritual objects for the Holy Grail. The Magician wears a tiara, symbol of the crowning power of intellect. Crystals radiating from the Magician's left eye indicate the ability to perceive the pure forms of existence, an ability that could be clouded by unintegrated darker emotions, represented by the figure rising from the tiara.",
     "2 The High Priestess - The High Priestess is the Goddess, manifested as the moon, the seas, the night and the Earth. Light fills the card, radiating from her palms, pouring down froma globe over her head. Her dress seems to pour down like rain on the camel and the dark land. She is the divine life principle.",
     "3 The Empress - Below the eye at the top of the card is a woman and behind her, a doorway symbolizing culture. The open door is scaled, like a fish, and the arch suggests a church, religion. The woman stands on a crescent that floats in the water. She holds a scepter topped with a pine cone and a snake that wraps around her arm. The snake represents transformation and enlightenment. A band of light is around her head. A golden bird flies toward her ear, as if to bring the word of heaven.",
-    "4 The Emperor",
-    "5 The Hierophant",
-    "6 The Lovers",
-    "7 The Chariot",
-    "8 Strength",
-    "9 The Hermit",
-    "10 The Wheel of Fortune",
-    "11 Justice",
-    "12 The Hanged Man",
-    "13 Death",
-    "14 Alchemy",
-    "15 The Devil",
-    "16 The Tower",
-    "17 The Star",
+    "4 The Emperor - The tree behind the Emperor is Yggdrasil, the world tree of Scandinavian myth, with its roots deep in the mysterious origins of life and its branches reaching up to the stars and beyond. The Emperor holds the rod he recieved from the Empress. The gold ball in his other hand symbolizes the material world. The diamond overhead contains the colors of humanity.",
+    "5 The Hierophant - A grandfather fills most of the picture. To his right appears the father. At the bottom is the back of a boy's head. The boy wears a skullcap \(yarmulke\). The three generations of men represent the positive value of patriarchal religion and Judaism, the \"father\" of both Christianity and Islam. The book and the key before it symbolize the Torah, the five books of Moses, and the \"key\" to Jewish culture. The book also symbolizes culture and knowledge.",
+    "6 The Lovers - The Lovers cross arms behind a cup. In the sky is a spear, a unicorn, and a rose within a star of David. The trees on either side refer to the Garden of Eden, with the Tree of Life and the Tree of Knowledge. The woman's hair is like pitted rock, a sign of the ancientness of human sexual traditions. The ground shows the earthiness of love; the unicorn and the rose relfect its mystical qualities.",
+    "7 The Chariot - A boat with wheels rushes through a rough sea. The boat is red, the color of energy. A reg glow surrounds the figure in the boat. Above is a mythical beast, part boar, part wolf. It signifies our deepest fears, unnameable and wild.",
+    "8 Strength - The person of Strength is open, without shame. Her strength comes from her unity with Earth and her own divine energy. She is a shaman performing a ritual under the moon, in the woods by a pool of water. The pool is the unconscious, the hidden mysteries. By holding up the snake, the shaman connects the above and the below, the sky and the Earth. The snake is green, the color of new life, and its underside is red, the color of energy.",
+    "9 The Hermit - A man stands on a mountaintop, surrounded by birds symbolizing the spirit. The gnomes, whose faces appear in the rocks, symbolize the elemental spirit forces alive in nature. The lantern is human knowledge and teachings passed from generation to generation. An eye inside a triangle forms a traditional image of God.",
+    "10 The Wheel of Fortune - The wheel is set against a field of stars symbolizing the cosmos. Below, looking upward, is the Mother, the Earth. At the upper left is the Sky Father, Zeus. At the upper right is an androgynous child. The child, with its wizened face, represents humanity and our ancestors. Inside the Wheel, the mushrooms symbolize luck, the snake, rebirth, the eye, time, the dinosaur, all things lost in the turning of time.",
+    "11 Justice - Two separate images of balance are made by the scales in the foreground and the peacock feathers. The scales hang from an invisible holder, unchanging, the cosmic balls suspended above the pans. This signifies that Justice always exists in the universe as a perfect principle. The feathers exist in a much more precarious balance; a breath of wind would disrupt them. In the world of ordinary experience, Justice often seems remote. The feathers appear rooted in a tree trunk, suggesting that spirit does not exist apart from nature. Their \"Eyes\" signify seeing our own emotions.",
+    "12 The Hanged Man - The Hanged Man is Odin of Scandinavian myth. The rainbow implies water; its colors also correspond on the Hanged Man's body to the chakras, yogic points of energy in the human physique. The Hanged Man's hair seems to merge into the ground like the roots of a tree. On one side shines a crescent moon, symbol of the High Priestess, goddess of mystery. On the other appear Odin's twin ravens, Hugin and Munin, thought and memory. Ravens signify death and thus bring information from the \"other world.\"",
+    "13 Death - The image of the boat belongs to birth as well as to death; the baby's cradle originally symbolized a boat. The trees and grass signify plants, the bones, minerals, the birds, the animal world, and the ferryman, the human world. The peacock's eye in the center signifies looking at the truth in regard to death. The bird also symbolizes the soul and the divine potential of a person.",
+    "14 Alchemy - The diagonal divides the card between blue and red, water and fire. The Grail appears twice, red in the blue half, and blue in the red half, providing an interchange of energy. The two cups come from the traditional image of the card as Temperance. On the right a circle contains the sun and the moon. The red background is pitted rock, a symbol of age. The blue side is ageless light, a quality of spirit. A devil face inhabits the cloud, signifing sexual life energy. On the other side is her reflection, an angel. Below the angel and the devil is a clown and a skull, life and death.",
+    "15 The Devil - The picture is organized around a diagonal line, broken by a crystal which transforms the aggressive instict of the Devil. The snake is an image of rebirth and the visionary experience, and also of evil. The Devil has three horns and three eyes, and wears a stone diadem.",
+    "16 The Tower - The tower symbolizes an arrogant technology that constantly desires more and bigger monuments to its conquest of nature. Inside of it is darkness and fire. It is a modern image of the Tower of Babel. The sunrise and blue sky suggest hope.",
+    "17 The Star - A woman is at thebottom of a bare rocky hill where a stream of water splashes into a pool. She is washing her hair, an act of unity with the Earth. ",
     "18 The Moon",
     "19 The Sun",
     "20 Aeon",
